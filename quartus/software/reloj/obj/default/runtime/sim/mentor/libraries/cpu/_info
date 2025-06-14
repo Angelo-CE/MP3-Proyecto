@@ -1,0 +1,142 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/QuartusProject/Examples/software/reloj/obj/default/runtime/sim/mentor
+vreloj_soc_NIOS_II_cpu
+Z1 !s110 1749161838
+!i10b 1
+!s100 BzYj`Hf@eSnAmg8>;YFQl2
+I>L5n>4_P5fEPE8bFiga4l0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1747346007
+8D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu.vo
+FD:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu.vo
+L0 31
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1749161838.000000
+!s107 D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu.vo|
+!s90 -reportprogress|300|D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu.vo|-work|cpu|
+!i113 1
+Z6 o-work cpu
+Z7 tCvgOpt 0
+nreloj_soc_@n@i@o@s_@i@i_cpu
+vreloj_soc_NIOS_II_cpu_debug_slave_sysclk
+R1
+!i10b 1
+!s100 =9`6H@:3QZ[64BQSd;Mid3
+I_aVCkeE5oEoiZY44hfQ2<3
+R2
+R0
+R3
+8D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_debug_slave_sysclk.v
+FD:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_debug_slave_sysclk.v
+Z8 L0 21
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_debug_slave_sysclk.v|
+!s90 -reportprogress|300|D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_debug_slave_sysclk.v|-work|cpu|
+!i113 1
+R6
+R7
+nreloj_soc_@n@i@o@s_@i@i_cpu_debug_slave_sysclk
+vreloj_soc_NIOS_II_cpu_debug_slave_tck
+R1
+!i10b 1
+!s100 oAlX6`D[PN4Ya@`di>fSD1
+I>R?=IbbN15Y^U48@PATGK0
+R2
+R0
+R3
+8D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_debug_slave_tck.v
+FD:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_debug_slave_tck.v
+R8
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_debug_slave_tck.v|
+!s90 -reportprogress|300|D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_debug_slave_tck.v|-work|cpu|
+!i113 1
+R6
+R7
+nreloj_soc_@n@i@o@s_@i@i_cpu_debug_slave_tck
+vreloj_soc_NIOS_II_cpu_debug_slave_wrapper
+R1
+!i10b 1
+!s100 3PCI8VKVn3hnoYl3<5lm00
+I^_JY82Yc]`0Tedf9l0WhS3
+R2
+R0
+R3
+8D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_debug_slave_wrapper.v
+FD:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_debug_slave_wrapper.v
+R8
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_debug_slave_wrapper.v|
+!s90 -reportprogress|300|D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_debug_slave_wrapper.v|-work|cpu|
+!i113 1
+R6
+R7
+nreloj_soc_@n@i@o@s_@i@i_cpu_debug_slave_wrapper
+vreloj_soc_NIOS_II_cpu_mult_cell
+R1
+!i10b 1
+!s100 :E3`cCj;PF[Hi8ZfW6;X82
+ILDIATCUo_>gDAEYI15aG91
+R2
+R0
+R3
+8D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_mult_cell.v
+FD:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_mult_cell.v
+R8
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_mult_cell.v|
+!s90 -reportprogress|300|D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_mult_cell.v|-work|cpu|
+!i113 1
+R6
+R7
+nreloj_soc_@n@i@o@s_@i@i_cpu_mult_cell
+vreloj_soc_NIOS_II_cpu_test_bench
+R1
+!i10b 1
+!s100 BJG6[l2mdEKL0e[EbM[TR3
+I127m6GkoBc4X1cDhFGAi72
+R2
+R0
+R3
+8D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_test_bench.v
+FD:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_test_bench.v
+R8
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_test_bench.v|
+!s90 -reportprogress|300|D:/QuartusProject/Examples/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOS_II_cpu_test_bench.v|-work|cpu|
+!i113 1
+R6
+R7
+nreloj_soc_@n@i@o@s_@i@i_cpu_test_bench
