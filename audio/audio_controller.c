@@ -1,8 +1,8 @@
+#include <stddef.h> // Fix NULL
 #include "audio_controller.h"
 #include <stdio.h>
 #include <unistd.h>
 #include <math.h>
-
 
 // Configuración de audio
 #define SAMPLE_RATE 48000
@@ -13,7 +13,7 @@
 #ifdef SIMULATOR
 static uint32_t simulated_audio_regs[4] = {0};
 #else
-volatile uint32_t* audio_ptr = (uint32_t*)AUDIO_BASE;
+volatile uint32_t* audio_ptr = (volatile uint32_t*)AUDIO_BASE;
 #endif
 
 void audio_init(void) {
@@ -23,7 +23,7 @@ void audio_init(void) {
 #else
     // Hardware real
     audio_clear_fifos();
-    printf("Audio inicializado (Hardware @ 0x%08X)\n", AUDIO_BASE);
+    // Usar debug_puts en lugar de printf para bare metal
 #endif
 }
 
@@ -64,8 +64,8 @@ void audio_clear_fifos(void) {
 }
 
 // Función de prueba (solo para simulación)
-void generate_tone(float freq, int duration_ms) {
 #ifdef SIMULATOR
+void generate_tone(float freq, int duration_ms) {
     int samples = SAMPLE_RATE * duration_ms / 1000;
     printf("Generando tono: %.2f Hz (%d muestras)\n", freq, samples);
     
@@ -74,5 +74,5 @@ void generate_tone(float freq, int duration_ms) {
         int32_t sample = AMPLITUDE * sin(2 * PI * freq * t);
         audio_write_sample(sample, sample);
     }
-#endif
 }
+#endif

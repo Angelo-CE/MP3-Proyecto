@@ -1,3 +1,4 @@
+#include <stddef.h> // Fix NULL
 #ifndef SD_CARD_H
 #define SD_CARD_H
 

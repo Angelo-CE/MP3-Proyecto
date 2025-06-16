@@ -1,12 +1,14 @@
+#include <stddef.h> // Fix NULL
 #include <errno.h>
 #include <sys/stat.h>
 #include <sys/times.h>
 #include <sys/unistd.h>
+#include <sys/types.h> // Para caddr_t
+#include "minimal_io.h"
 
 #undef errno
 extern int errno;
 
-// Funciones necesarias para el linker
 void _exit(int status) {
     while(1);
 }
@@ -33,14 +35,14 @@ int _read(int file, char *ptr, int len) {
 }
 
 int _write(int file, char *ptr, int len) {
-    // Implementación básica para debugging
-    // (En producción, usar tu driver UART o VGA)
+    for (int i = 0; i < len; i++) {
+        debug_putchar(ptr[i]);
+    }
     return len;
 }
 
-// Implementación básica de sbrk para gestión de memoria
 caddr_t _sbrk(int incr) {
-    extern char _end;          // Definido por el linker
+    extern char _end;
     static char *heap_end = 0;
     char *prev_heap_end;
 
@@ -53,4 +55,3 @@ caddr_t _sbrk(int incr) {
 
     return (caddr_t)prev_heap_end;
 }
-

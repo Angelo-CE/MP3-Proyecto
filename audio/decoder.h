@@ -1,3 +1,4 @@
+#include <stddef.h> // Fix NULL
 #ifndef DECODER_H
 #define DECODER_H
 

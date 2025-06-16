@@ -1,3 +1,4 @@
+#include <stddef.h> // Fix NULL
 #ifndef UI_H
 #define UI_H
 

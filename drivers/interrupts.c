@@ -1,13 +1,22 @@
 #include "interrupts.h"
+#include "minimal_io.h"
 
-static button_handler_t current_handler = NULL;
+static void (*button_callback)(Button) = NULL;
 
-void register_button_handler(button_handler_t handler) {
-    current_handler = handler;
+void register_button_handler(void (*handler)(Button)) {
+    button_callback = handler;
+    if (handler) debug_puts("Manejador de interrupciones registrado\n");
 }
 
-void hardware_button_isr(Button button_id) {
-    if(current_handler != NULL && button_id != NO_BUTTON) {
-        current_handler(button_id);
-    }
+#ifdef SIMULATOR
+void interrupts_init(void) {}
+#else
+void interrupts_init(void) {
+    // Configura el controlador de interrupciones real
 }
+#endif
+
+void dispatch_button(Button btn) {
+    if (button_callback) button_callback(btn);
+}
+

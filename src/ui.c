@@ -1,3 +1,4 @@
+#include <stddef.h> // Fix NULL
 #include "ui.h"
 #include "minimal_io.h"
 #include "state_machine.h"
@@ -23,7 +24,7 @@ void show_playback_status(int frame) {
     const char* name = playlist[current_track].name;
     while (*name) buffer[pos++] = *name++;
     
-    // Formato MM:SS
+    // Formato MM:SS de posición actual
     buffer[pos++] = ' ';
     buffer[pos++] = '0' + (frame/60)/10;
     buffer[pos++] = '0' + (frame/60)%10;
@@ -32,8 +33,9 @@ void show_playback_status(int frame) {
     buffer[pos++] = '0' + (frame%60)%10;
     buffer[pos++] = '/';
     
-    int total_min = playlist[current_track].duration_sec/60;
-    int total_sec = playlist[current_track].duration_sec%60;
+    // Formato MM:SS de duración total
+    int total_min = playlist[current_track].duration / 60;
+    int total_sec = playlist[current_track].duration % 60;
     buffer[pos++] = '0' + total_min/10;
     buffer[pos++] = '0' + total_min%10;
     buffer[pos++] = ':';
@@ -46,3 +48,4 @@ void show_playback_status(int frame) {
     debug_puts(buffer);
     debug_puts("\n");
 }
+

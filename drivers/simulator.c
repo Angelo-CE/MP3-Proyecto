@@ -1,3 +1,4 @@
+#include <stddef.h> // Fix NULL
 #include "simulator.h"
 #include "interrupts.h"
 #include <stdio.h>

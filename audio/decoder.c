@@ -1,8 +1,11 @@
+#include <stddef.h> // Fix NULL
 #include "decoder.h"
 #include "audio_controller.h"
 #include <stdio.h>
 
 #ifdef SIMULATOR
+#include "audio_controller.h" // Para generate_tone
+
 void play_audio(const char* filename) {
     printf("Simulando: %s\n", filename);
     generate_tone(440.0, 1000);
@@ -21,8 +24,9 @@ void transfer_to_fpga(uint8_t* data, size_t size) {
 void play_audio(const char* filename) {
     uint8_t buffer[512];
     int size = sd_get_filesize(filename);
-    int sectors = size / 512;
+    if (size <= 0) return;
     
+    int sectors = size / 512;
     for(int i = 0; i < sectors; i++) {
         if(sd_read(buffer, i) != 0) break;
         transfer_to_fpga(buffer, 512);
@@ -31,10 +35,9 @@ void play_audio(const char* filename) {
 #endif
 
 void pause_audio(void) {
-    printf("Audio pausado\n");
+    // Implementación real iría aquí
 }
 
 void stop_audio(void) {
-    printf("Audio detenido\n");
     audio_clear_fifos();
 }

@@ -1,3 +1,4 @@
+#include <stddef.h> // Fix NULL
 #ifndef SIMULATOR_H
 #define SIMULATOR_H
 

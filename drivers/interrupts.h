@@ -1,21 +1,14 @@
 #ifndef INTERRUPTS_H
 #define INTERRUPTS_H
 
-#include <stddef.h>
+#include "buttons.h"
 
-typedef enum {
-    NO_BUTTON = -1,
-    PLAY_BUTTON = 0,
-    PAUSE_BUTTON = 1,
-    STOP_BUTTON = 2,
-    NEXT_BUTTON = 3,
-    PREV_BUTTON = 4
-} Button;
+void interrupts_init(void);
+void register_button_handler(void (*handler)(Button));
+// ya no declaramos enable_button_interrupts aquí
 
-typedef void (*button_handler_t)(Button);
-
-// Solo declaraciones
-void register_button_handler(button_handler_t handler);
-void hardware_button_isr(Button button_id);
+// Función para despachar desde la ISR hardware
+void dispatch_button(Button btn);
 
 #endif
+

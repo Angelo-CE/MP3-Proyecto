@@ -1,38 +1,60 @@
-# Configuración para Linux ARM
-ARM_CC = arm-linux-gnueabihf-gcc
-CFLAGS = -I. -I./drivers -I./audio -Wall -Os -ffunction-sections -fdata-sections
-LDFLAGS = -static -lm -Wl,--gc-sections
+# Configuración para SoC EDS
+SOCEDS_PATH = $(HOME)/intelFPGA/18.1/embedded/host_tools/mentor/gnu/arm/baremetal
+ARM_CC = $(SOCEDS_PATH)/bin/arm-altera-eabi-gcc
+OBJCOPY = $(SOCEDS_PATH)/bin/arm-altera-eabi-objcopy
 
-CORE_SRC = src/main.c src/state_machine.c src/playlist.c src/ui.c \
-           audio/decoder.c audio/audio_controller.c \
-           drivers/interrupts.c drivers/hardware_interface.c
+# Flags de compilación
+CFLAGS = -I. -I./drivers -I./audio -g -Wall -mcpu=cortex-a9 -mfloat-abi=soft -ffreestanding -nostdlib -Os
+LDFLAGS = -T linker.ld -static -nostdlib -Wl,-u,main -Wl,--gc-sections -lgcc
 
-HW_SRC = drivers/hardware_real.c drivers/sd_card.c drivers/minimal_io.c
+# Fuentes principales
+CORE_SRC = src/main.c src/state_machine.c src/playlist.c src/ui.c
+AUDIO_SRC = audio/audio_controller.c audio/decoder.c
+DRIVER_SRC = drivers/interrupts.c drivers/hardware_interface.c drivers/minimal_io.c drivers/syscalls.c drivers/sd_card.c
+STARTUP_SRC = startup.s
 
-OUT_PROD = build/audio_player
+OBJS = $(CORE_SRC:.c=.o) $(AUDIO_SRC:.c=.o) $(DRIVER_SRC:.c=.o) $(STARTUP_SRC:.s=.o)
 
-# Usar variable para el directorio de montaje
-SD_MOUNT = /media/$(USER)/rootfs/root
+OUT_PROD = build/audio_player.elf
+OUT_BIN = build/audio_player.bin
 
-prod: $(CORE_SRC) $(HW_SRC)
-	$(ARM_CC) $(CFLAGS) $^ -o $(OUT_PROD) $(LDFLAGS)
-	@echo "--------------------------------------------------"
-	@echo "¡Ejecutable generado con éxito!: $(OUT_PROD)"
-	@echo "Tamaño: `ls -lh $(OUT_PROD) | awk '{print $$5}'`"
-	@echo "Para copiar a la uSD:"
-	@echo "sudo cp $(OUT_PROD) $(SD_MOUNT)/"
-	@echo "--------------------------------------------------"
+# Reglas principales
+all: $(OUT_BIN)
 
-install:
-	@if [ -d "$(SD_MOUNT)" ]; then \
-		sudo cp $(OUT_PROD) $(SD_MOUNT)/; \
-		echo "¡Binario copiado a la uSD!"; \
+$(OUT_BIN): $(OUT_PROD)
+	$(OBJCOPY) -O binary $< $@
+	@echo "Binario generado: $(OUT_BIN)"
+
+$(OUT_PROD): $(OBJS)
+	$(ARM_CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
+
+# Reglas de compilación
+%.o: %.c
+	$(ARM_CC) $(CFLAGS) -c $< -o $@
+
+%.o: %.s
+	$(ARM_CC) $(CFLAGS) -c $< -o $@
+
+# Limpieza
+clean:
+	rm -f $(OUT_PROD) $(OUT_BIN) $(OBJS)
+
+# Instalación
+install: $(OUT_BIN)
+	@echo "Copiando a tarjeta SD..."
+	@if [ -d "/media/$(USER)/BOOT" ]; then \
+		sudo cp $(OUT_BIN) /media/$(USER)/BOOT/; \
+		echo "Copiado a /media/$(USER)/BOOT/"; \
 	else \
-		echo "¡Error! Directorio no encontrado: $(SD_MOUNT)"; \
-		echo "Por favor monte la uSD manualmente"; \
+		echo "No se encontró la tarjeta SD montada"; \
 	fi
 
-clean:
-	rm -f $(OUT_PROD) build/*
+# Simulación
+sim:
+	gcc -DSIMULATOR -I. -I./drivers -I./audio \
+		src/main.c src/state_machine.c src/playlist.c src/ui.c \
+		audio/audio_controller.c audio/decoder.c \
+		drivers/interrupts.c drivers/hardware_interface.c drivers/minimal_io.c drivers/syscalls.c drivers/sd_card.c \
+		-o build/audio_sim -lm
 
-.PHONY: prod clean install
+.PHONY: all clean install sim
