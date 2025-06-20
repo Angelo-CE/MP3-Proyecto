@@ -1,5 +1,5 @@
 Assembler report for reloj
-Sat Jun 07 02:05:53 2025
+Tue Jun 17 03:18:36 2025
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -11,7 +11,7 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: D:/QuartusProject/Examples/output_files/reloj.sof
+  6. Assembler Device Options: C:/Users/f_cec/Documents/GitHub/MP3-Proyecto/quartus/output_files/reloj.sof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Jun 07 02:05:53 2025 ;
+; Assembler Status      ; Successful - Tue Jun 17 03:18:36 2025 ;
 ; Revision Name         ; reloj                                 ;
 ; Top-level Entity Name ; reloj_soc                             ;
 ; Family                ; Cyclone V                             ;
@@ -63,23 +63,23 @@ refer to the applicable agreement for further details.
 +--------+------------------------+--------------+
 
 
-+---------------------------------------------------+
-; Assembler Generated Files                         ;
-+---------------------------------------------------+
-; File Name                                         ;
-+---------------------------------------------------+
-; D:/QuartusProject/Examples/output_files/reloj.sof ;
-+---------------------------------------------------+
-
-
 +-----------------------------------------------------------------------------+
-; Assembler Device Options: D:/QuartusProject/Examples/output_files/reloj.sof ;
-+----------------+------------------------------------------------------------+
-; Option         ; Setting                                                    ;
-+----------------+------------------------------------------------------------+
-; JTAG usercode  ; 0x023A5DA6                                                 ;
-; Checksum       ; 0x023A5DA6                                                 ;
-+----------------+------------------------------------------------------------+
+; Assembler Generated Files                                                   ;
++-----------------------------------------------------------------------------+
+; File Name                                                                   ;
++-----------------------------------------------------------------------------+
+; C:/Users/f_cec/Documents/GitHub/MP3-Proyecto/quartus/output_files/reloj.sof ;
++-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/f_cec/Documents/GitHub/MP3-Proyecto/quartus/output_files/reloj.sof ;
++----------------+--------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                              ;
++----------------+--------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x0399FD1A                                                                           ;
+; Checksum       ; 0x0399FD1A                                                                           ;
++----------------+--------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -88,14 +88,15 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Sat Jun 07 02:05:43 2025
+    Info: Processing started: Tue Jun 17 03:18:25 2025
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off reloj -c reloj
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
+Info (11878): Hard Processor Subsystem configuration has not changed and a Preloader software update is not required
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4879 megabytes
-    Info: Processing ended: Sat Jun 07 02:05:53 2025
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Peak virtual memory: 4924 megabytes
+    Info: Processing ended: Tue Jun 17 03:18:36 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:11
 
 

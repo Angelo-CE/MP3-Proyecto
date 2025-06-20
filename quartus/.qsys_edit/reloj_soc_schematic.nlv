@@ -7,96 +7,85 @@ preplace inst reloj_soc.NIOS_II.clock_bridge -pg 1
 preplace inst reloj_soc.HPS.eosc1 -pg 1
 preplace inst reloj_soc.HPS.eosc2 -pg 1
 preplace inst reloj_soc.HPS.f2s_sdram_ref_clk -pg 1
-preplace inst reloj_soc.MASTER_HPS.clk_src -pg 1
-preplace inst reloj_soc.REG_LEDS -pg 1 -lvl 15 -y 650
-preplace inst reloj_soc.REG_BUTTONS -pg 1 -lvl 15 -y 350
-preplace inst reloj_soc.AUDIO_PLL -pg 1 -lvl 10 -y 780
+preplace inst reloj_soc.SHARED_RAM -pg 1 -lvl 15 -y 260
+preplace inst reloj_soc.REG_LEDS -pg 1 -lvl 22 -y 620
+preplace inst reloj_soc.AUDIO_PLL -pg 1 -lvl 17 -y 790
+preplace inst reloj_soc.REG_BUTTONS -pg 1 -lvl 22 -y 320
+preplace inst reloj_soc.SDRAM_CLK -pg 1 -lvl 14 -y 300
 preplace inst reloj_soc.HPS.axi_sdram -pg 1
 preplace inst reloj_soc.HPS.scu -pg 1
 preplace inst reloj_soc.HPS.sdrctl -pg 1
-preplace inst reloj_soc.MASTER_HPS.clk_rst -pg 1
 preplace inst reloj_soc.HPS.rstmgr -pg 1
 preplace inst reloj_soc.HPS.nand0 -pg 1
 preplace inst reloj_soc.AUDIO_PLL.reset_from_locked -pg 1
 preplace inst reloj_soc.HPS.l3regs -pg 1
 preplace inst reloj_soc.HPS.hps_io.border -pg 1
 preplace inst reloj_soc.HPS.sysmgr -pg 1
-preplace inst reloj_soc.MASTER_HPS.b2p_adapter -pg 1
 preplace inst reloj_soc.HPS.qspi -pg 1
-preplace inst reloj_soc.MASTER_HPS.timing_adt -pg 1
 preplace inst reloj_soc.HPS.fpgamgr -pg 1
-preplace inst reloj_soc.UART -pg 1 -lvl 15 -y 550
+preplace inst reloj_soc.UART -pg 1 -lvl 22 -y 520
 preplace inst reloj_soc.HPS.clk_0 -pg 1
 preplace inst reloj_soc.HPS.timer -pg 1
 preplace inst reloj_soc.HPS.fpga_interfaces -pg 1
 preplace inst reloj_soc.HPS.spim0 -pg 1
-preplace inst reloj_soc.MASTER_HPS.transacto -pg 1
 preplace inst reloj_soc.HPS.spim1 -pg 1
-preplace inst reloj_soc.HPS -pg 1 -lvl 8 -y 80
-preplace inst reloj_soc.MASTER_HPS.b2p -pg 1
+preplace inst reloj_soc.HPS -pg 1 -lvl 15 -y 50
 preplace inst reloj_soc.HPS.dcan0 -pg 1
-preplace inst reloj_soc.CLK -pg 1 -lvl 13 -y 410
+preplace inst reloj_soc.CLK -pg 1 -lvl 20 -y 380
 preplace inst reloj_soc.HPS.dcan1 -pg 1
-preplace inst reloj_soc.TIMER -pg 1 -lvl 15 -y 450
-preplace inst reloj_soc.NIOS_II.cpu -pg 1
+preplace inst reloj_soc.TIMER -pg 1 -lvl 22 -y 420
 preplace inst reloj_soc.HPS.bridges -pg 1
 preplace inst reloj_soc.HPS.timer0 -pg 1
-preplace inst reloj_soc.MASTER_HPS.p2b_adapter -pg 1
+preplace inst reloj_soc.NIOS_II.cpu -pg 1
 preplace inst reloj_soc.HPS.timer1 -pg 1
 preplace inst reloj_soc.HPS.timer2 -pg 1
 preplace inst reloj_soc.HPS.timer3 -pg 1
 preplace inst reloj_soc.HPS.gmac0 -pg 1
 preplace inst reloj_soc -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst reloj_soc.SDRAM_CLK.sys_pll -pg 1
 preplace inst reloj_soc.HPS.gmac1 -pg 1
 preplace inst reloj_soc.HPS.hps_io -pg 1
 preplace inst reloj_soc.HPS.clkmgr -pg 1
 preplace inst reloj_soc.HPS.arm_a9_0 -pg 1
-preplace inst reloj_soc.AUDIO_CONFIG -pg 1 -lvl 11 -y 690
+preplace inst reloj_soc.AUDIO_CONFIG -pg 1 -lvl 18 -y 560
 preplace inst reloj_soc.HPS.uart0 -pg 1
 preplace inst reloj_soc.HPS.L2 -pg 1
 preplace inst reloj_soc.HPS.i2c0 -pg 1
 preplace inst reloj_soc.HPS.arm_a9_1 -pg 1
 preplace inst reloj_soc.HPS.uart1 -pg 1
-preplace inst reloj_soc.RAM -pg 1 -lvl 14 -y 400
+preplace inst reloj_soc.RAM -pg 1 -lvl 21 -y 370
 preplace inst reloj_soc.HPS.i2c1 -pg 1
 preplace inst reloj_soc.HPS.i2c2 -pg 1
-preplace inst reloj_soc.MASTER_HPS.p2b -pg 1
 preplace inst reloj_soc.HPS.i2c3 -pg 1
 preplace inst reloj_soc.HPS.arm_gic_0 -pg 1
-preplace inst reloj_soc.MASTER_HPS.jtag_phy_embedded_in_jtag_master -pg 1
 preplace inst reloj_soc.HPS.f2s_periph_ref_clk -pg 1
-preplace inst reloj_soc.MASTER_HPS -pg 1 -lvl 7 -y 80
-preplace inst reloj_soc.AUDIO -pg 1 -lvl 12 -y 690
+preplace inst reloj_soc.AUDIO -pg 1 -lvl 19 -y 660
 preplace inst reloj_soc.HPS.usb0 -pg 1
 preplace inst reloj_soc.HPS.axi_ocram -pg 1
+preplace inst reloj_soc.SDRAM_CLK.reset_from_locked -pg 1
 preplace inst reloj_soc.HPS.sdmmc -pg 1
 preplace inst reloj_soc.HPS.usb1 -pg 1
 preplace inst reloj_soc.HPS.wd_timer0 -pg 1
 preplace inst reloj_soc.AUDIO_PLL.audio_pll -pg 1
 preplace inst reloj_soc.NIOS_II.reset_bridge -pg 1
 preplace inst reloj_soc.HPS.wd_timer1 -pg 1
-preplace inst reloj_soc.NIOS_II -pg 1 -lvl 14 -y 230
-preplace inst reloj_soc.MASTER_HPS.fifo -pg 1
+preplace inst reloj_soc.NIOS_II -pg 1 -lvl 21 -y 70
 preplace inst reloj_soc.HPS.gpio0 -pg 1
-preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)AUDIO_CONFIG.external_interface,(SLAVE)reloj_soc.audio_config) 1 0 11 NJ 880 NJ 880 NJ 880 NJ 700 NJ 700 NJ 700 NJ 700 NJ 700 NJ 700 NJ 700 NJ
-preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)reloj_soc.memory,(SLAVE)HPS.memory) 1 0 8 NJ 300 NJ 300 NJ 300 NJ 300 NJ 300 NJ 300 NJ 300 NJ
-preplace netloc FAN_OUT<net_container>reloj_soc</net_container>(MASTER)CLK.clk,(SLAVE)MASTER_HPS.clk,(SLAVE)REG_BUTTONS.clk,(SLAVE)HPS.f2h_axi_clock,(SLAVE)REG_LEDS.clk,(SLAVE)AUDIO_CONFIG.clk,(SLAVE)UART.clk,(SLAVE)HPS.h2f_lw_axi_clock,(SLAVE)AUDIO_PLL.ref_clk,(SLAVE)TIMER.clk,(SLAVE)RAM.clk1,(SLAVE)AUDIO.clk,(SLAVE)HPS.h2f_axi_clock,(SLAVE)NIOS_II.clk) 1 6 9 1820 40 2340 740 NJ 740 2720 740 3040 660 3300 820 NJ 820 3720 490 4200
-preplace netloc EXPORT<net_container>reloj_soc</net_container>(MASTER)HPS.h2f_reset,(MASTER)reloj_soc.hps_h2f_reset) 1 8 8 NJ 230 NJ 230 NJ 230 NJ 230 NJ 230 NJ 190 NJ 190 NJ
-preplace netloc FAN_OUT<net_container>reloj_soc</net_container>(MASTER)AUDIO_PLL.reset_source,(SLAVE)AUDIO.reset,(SLAVE)AUDIO_CONFIG.reset) 1 10 2 3000 680 3280
-preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)HPS.hps_io,(SLAVE)reloj_soc.hps_io) 1 0 8 NJ 250 NJ 250 NJ 250 NJ 250 NJ 250 NJ 250 NJ 250 NJ
-preplace netloc INTERCONNECT<net_container>reloj_soc</net_container>(SLAVE)RAM.s1,(SLAVE)REG_BUTTONS.s1,(SLAVE)UART.avalon_jtag_slave,(SLAVE)REG_LEDS.s1,(SLAVE)TIMER.s1,(MASTER)NIOS_II.data_master,(MASTER)NIOS_II.instruction_master,(SLAVE)AUDIO.avalon_audio_slave,(SLAVE)AUDIO_CONFIG.avalon_av_config_slave,(SLAVE)NIOS_II.debug_mem_slave) 1 10 5 3080 640 3320 860 NJ 860 3780 510 4140
-preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)reloj_soc.resetxd,(SLAVE)CLK.clk_in_reset) 1 0 13 NJ 440 NJ 440 NJ 440 NJ 440 NJ 440 NJ 440 NJ 440 NJ 440 NJ 440 NJ 440 NJ 440 NJ 440 NJ
-preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)reloj_soc.leds,(SLAVE)REG_LEDS.external_connection) 1 0 15 NJ 660 NJ 660 NJ 660 NJ 660 NJ 660 NJ 680 NJ 680 NJ 620 NJ 620 NJ 620 NJ 620 NJ 680 NJ 680 NJ 680 N
-preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)reloj_soc.hps_f2h_stm_hw_events,(SLAVE)HPS.f2h_stm_hw_events) 1 0 8 NJ 210 NJ 210 NJ 210 NJ 210 NJ 210 NJ 210 NJ 210 NJ
-preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)reloj_soc.buttons,(SLAVE)REG_BUTTONS.external_connection) 1 0 15 NJ 40 NJ 380 NJ 380 NJ 380 NJ 380 NJ 380 NJ 380 NJ 380 NJ 380 NJ 380 NJ 380 NJ 380 NJ 380 NJ 370 NJ
-preplace netloc FAN_OUT<net_container>reloj_soc</net_container>(SLAVE)UART.irq,(SLAVE)AUDIO.interrupt,(SLAVE)TIMER.irq,(MASTER)NIOS_II.irq) 1 11 4 3360 840 NJ 840 NJ 840 4220
-preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)reloj_soc.clk,(SLAVE)CLK.clk_in) 1 0 13 NJ 420 NJ 420 NJ 420 NJ 420 NJ 420 NJ 420 NJ 420 NJ 420 NJ 420 NJ 420 NJ 420 NJ 420 NJ
-preplace netloc POINT_TO_POINT<net_container>reloj_soc</net_container>(MASTER)MASTER_HPS.master,(SLAVE)HPS.f2h_axi_slave) 1 7 1 2300
-preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)reloj_soc.hps_f2h_debug_reset_req,(SLAVE)HPS.f2h_debug_reset_req) 1 0 8 NJ 180 NJ 180 NJ 180 NJ 180 NJ 180 NJ 180 NJ 180 NJ
-preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)reloj_soc.audio,(SLAVE)AUDIO.external_interface) 1 0 12 NJ 900 NJ 900 NJ 900 NJ 720 NJ 720 NJ 720 NJ 720 NJ 720 NJ 720 NJ 720 NJ 800 NJ
-preplace netloc EXPORT<net_container>reloj_soc</net_container>(MASTER)AUDIO_PLL.audio_clk,(MASTER)reloj_soc.audio_pll) 1 10 6 NJ 880 NJ 880 NJ 880 NJ 880 NJ 880 NJ
-preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)reloj_soc.hps_f2h_warm_reset_req,(SLAVE)HPS.f2h_warm_reset_req) 1 0 8 NJ 230 NJ 230 NJ 230 NJ 230 NJ 230 NJ 230 NJ 230 NJ
-preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)HPS.f2h_cold_reset_req,(SLAVE)reloj_soc.hps_f2h_cold_reset_req) 1 0 8 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ
-preplace netloc FAN_OUT<net_container>reloj_soc</net_container>(SLAVE)REG_BUTTONS.reset,(SLAVE)AUDIO_PLL.ref_reset,(SLAVE)MASTER_HPS.clk_reset,(SLAVE)REG_LEDS.reset,(SLAVE)UART.reset,(MASTER)CLK.clk_reset,(SLAVE)NIOS_II.reset,(SLAVE)TIMER.reset,(SLAVE)RAM.reset1) 1 6 9 1820 320 NJ 360 NJ 360 2740 360 NJ 360 NJ 360 NJ 360 3740 390 4160
-levelinfo -pg 1 0 150 4510
-levelinfo -hier reloj_soc 160 180 510 840 1210 1560 1800 2140 2510 2700 2820 3110 3390 3550 3900 4250 4400
+preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)AUDIO_CONFIG.external_interface,(SLAVE)reloj_soc.audio_config) 1 0 18 NJ 850 NJ 850 NJ 850 NJ 670 NJ 670 NJ 670 NJ 670 NJ 670 NJ 670 NJ 670 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 4800
+preplace netloc POINT_TO_POINT<net_container>reloj_soc</net_container>(MASTER)SDRAM_CLK.reset_source,(SLAVE)SHARED_RAM.reset1) 1 14 1 N
+preplace netloc INTERCONNECT<net_container>reloj_soc</net_container>(SLAVE)NIOS_II.debug_mem_slave,(SLAVE)AUDIO.avalon_audio_slave,(SLAVE)SHARED_RAM.s2,(SLAVE)TIMER.s1,(MASTER)NIOS_II.instruction_master,(SLAVE)AUDIO_CONFIG.avalon_av_config_slave,(SLAVE)RAM.s1,(SLAVE)UART.avalon_jtag_slave,(MASTER)NIOS_II.data_master,(SLAVE)REG_BUTTONS.s1,(SLAVE)REG_LEDS.s1) 1 14 8 4150 570 NJ 570 NJ 570 4820 510 5040 510 NJ 510 5480 510 5920
+preplace netloc POINT_TO_POINT<net_container>reloj_soc</net_container>(MASTER)SDRAM_CLK.sdram_clk,(SLAVE)HPS.f2h_sdram0_clock) 1 14 1 4110
+preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)REG_BUTTONS.external_connection,(SLAVE)reloj_soc.buttons) 1 0 22 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ 430 NJ 430 NJ 350 NJ 350 NJ 350 NJ 350 NJ 350 NJ 350 NJ
+preplace netloc FAN_OUT<net_container>reloj_soc</net_container>(MASTER)CLK.clk,(SLAVE)TIMER.clk,(SLAVE)AUDIO_PLL.ref_clk,(SLAVE)NIOS_II.clk,(SLAVE)REG_LEDS.clk,(SLAVE)SDRAM_CLK.ref_clk,(SLAVE)REG_BUTTONS.clk,(SLAVE)RAM.clk1,(SLAVE)UART.clk,(SLAVE)SHARED_RAM.clk2,(SLAVE)AUDIO.clk,(SLAVE)AUDIO_CONFIG.clk) 1 13 9 3640 260 4070 730 NJ 730 4540 680 4780 550 5060 490 NJ 490 5500 530 5900
+preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)reloj_soc.resetxd,(SLAVE)CLK.clk_in_reset) 1 0 20 NJ 410 NJ 410 NJ 410 NJ 410 NJ 410 NJ 410 NJ 410 NJ 410 NJ 410 NJ 410 NJ 410 NJ 410 NJ 410 NJ 470 NJ 470 NJ 470 NJ 470 NJ 470 NJ 470 NJ
+preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)reloj_soc.leds,(SLAVE)REG_LEDS.external_connection) 1 0 22 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 NJ 650 NJ 650 NJ 650 NJ
+preplace netloc FAN_OUT<net_container>reloj_soc</net_container>(SLAVE)TIMER.reset,(SLAVE)UART.reset,(SLAVE)RAM.reset1,(SLAVE)SDRAM_CLK.ref_reset,(SLAVE)NIOS_II.reset,(MASTER)CLK.clk_reset,(SLAVE)REG_LEDS.reset,(SLAVE)SHARED_RAM.reset2,(SLAVE)AUDIO_PLL.ref_reset,(SLAVE)REG_BUTTONS.reset) 1 13 9 3640 400 4130 410 NJ 330 4520 370 NJ 370 NJ 370 NJ 370 5460 550 5880
+preplace netloc FAN_OUT<net_container>reloj_soc</net_container>(SLAVE)AUDIO.reset,(SLAVE)AUDIO_CONFIG.reset,(MASTER)AUDIO_PLL.reset_source) 1 17 2 4820 820 5020
+preplace netloc FAN_IN<net_container>reloj_soc</net_container>(MASTER)HPS.h2f_axi_master,(MASTER)HPS.h2f_lw_axi_master,(SLAVE)SHARED_RAM.s1) 1 14 2 4150 250 4460
+preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)AUDIO.external_interface,(SLAVE)reloj_soc.audio) 1 0 19 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 NJ
+preplace netloc FAN_OUT<net_container>reloj_soc</net_container>(SLAVE)HPS.h2f_axi_clock,(SLAVE)HPS.h2f_lw_axi_clock,(SLAVE)HPS.f2h_axi_clock,(SLAVE)SHARED_RAM.clk1,(MASTER)SDRAM_CLK.sys_clk) 1 14 1 4090
+preplace netloc EXPORT<net_container>reloj_soc</net_container>(MASTER)AUDIO_PLL.audio_clk,(MASTER)reloj_soc.audio_pll) 1 17 6 NJ 800 NJ 810 NJ 810 NJ 810 NJ 810 NJ
+preplace netloc FAN_OUT<net_container>reloj_soc</net_container>(SLAVE)UART.irq,(MASTER)NIOS_II.irq,(SLAVE)AUDIO.interrupt,(SLAVE)TIMER.irq) 1 18 4 5060 790 NJ 790 NJ 790 5860
+preplace netloc EXPORT<net_container>reloj_soc</net_container>(SLAVE)CLK.clk_in,(SLAVE)reloj_soc.clk) 1 0 20 NJ 390 NJ 390 NJ 390 NJ 390 NJ 390 NJ 390 NJ 390 NJ 390 NJ 390 NJ 390 NJ 390 NJ 390 NJ 390 NJ 450 NJ 450 NJ 450 NJ 450 NJ 450 NJ 450 NJ
+levelinfo -pg 1 0 90 6190
+levelinfo -hier reloj_soc 100 120 450 780 1150 1500 1740 2080 2460 2690 2810 3100 3400 3560 3910 4270 4500 4620 4850 5090 5290 5620 5950 6100

@@ -44,26 +44,26 @@
 
 module reloj_soc_mm_interconnect_0_router_004_default_decode
   #(
-     parameter DEFAULT_CHANNEL = 0,
-               DEFAULT_WR_CHANNEL = -1,
-               DEFAULT_RD_CHANNEL = -1,
+     parameter DEFAULT_CHANNEL = -1,
+               DEFAULT_WR_CHANNEL = 0,
+               DEFAULT_RD_CHANNEL = 1,
                DEFAULT_DESTID = 0 
    )
-  (output [80 - 78 : 0] default_destination_id,
-   output [7-1 : 0] default_wr_channel,
-   output [7-1 : 0] default_rd_channel,
-   output [7-1 : 0] default_src_channel
+  (output [102 - 100 : 0] default_destination_id,
+   output [8-1 : 0] default_wr_channel,
+   output [8-1 : 0] default_rd_channel,
+   output [8-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
-    DEFAULT_DESTID[80 - 78 : 0];
+    DEFAULT_DESTID[102 - 100 : 0];
 
   generate
     if (DEFAULT_CHANNEL == -1) begin : no_default_channel_assignment
       assign default_src_channel = '0;
     end
     else begin : default_channel_assignment
-      assign default_src_channel = 7'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 8'b1 << DEFAULT_CHANNEL;
     end
   endgenerate
 
@@ -73,8 +73,8 @@ module reloj_soc_mm_interconnect_0_router_004_default_decode
       assign default_rd_channel = '0;
     end
     else begin : default_rw_channel_assignment
-      assign default_wr_channel = 7'b1 << DEFAULT_WR_CHANNEL;
-      assign default_rd_channel = 7'b1 << DEFAULT_RD_CHANNEL;
+      assign default_wr_channel = 8'b1 << DEFAULT_WR_CHANNEL;
+      assign default_rd_channel = 8'b1 << DEFAULT_RD_CHANNEL;
     end
   endgenerate
 
@@ -93,7 +93,7 @@ module reloj_soc_mm_interconnect_0_router_004
     // Command Sink (Input)
     // -------------------
     input                       sink_valid,
-    input  [94-1 : 0]    sink_data,
+    input  [127-1 : 0]    sink_data,
     input                       sink_startofpacket,
     input                       sink_endofpacket,
     output                      sink_ready,
@@ -102,8 +102,8 @@ module reloj_soc_mm_interconnect_0_router_004
     // Command Source (Output)
     // -------------------
     output                          src_valid,
-    output reg [94-1    : 0] src_data,
-    output reg [7-1 : 0] src_channel,
+    output reg [127-1    : 0] src_data,
+    output reg [8-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -112,18 +112,18 @@ module reloj_soc_mm_interconnect_0_router_004
     // -------------------------------------------------------
     // Local parameters and variables
     // -------------------------------------------------------
-    localparam PKT_ADDR_H = 53;
+    localparam PKT_ADDR_H = 65;
     localparam PKT_ADDR_L = 36;
-    localparam PKT_DEST_ID_H = 80;
-    localparam PKT_DEST_ID_L = 78;
-    localparam PKT_PROTECTION_H = 84;
-    localparam PKT_PROTECTION_L = 82;
-    localparam ST_DATA_W = 94;
-    localparam ST_CHANNEL_W = 7;
+    localparam PKT_DEST_ID_H = 102;
+    localparam PKT_DEST_ID_L = 100;
+    localparam PKT_PROTECTION_H = 117;
+    localparam PKT_PROTECTION_L = 115;
+    localparam ST_DATA_W = 127;
+    localparam ST_CHANNEL_W = 8;
     localparam DECODER_TYPE = 1;
 
-    localparam PKT_TRANS_WRITE = 56;
-    localparam PKT_TRANS_READ  = 57;
+    localparam PKT_TRANS_WRITE = 68;
+    localparam PKT_TRANS_READ  = 69;
 
     localparam PKT_ADDR_W = PKT_ADDR_H-PKT_ADDR_L + 1;
     localparam PKT_DEST_ID_W = PKT_DEST_ID_H-PKT_DEST_ID_L + 1;
@@ -158,7 +158,8 @@ module reloj_soc_mm_interconnect_0_router_004
     assign src_valid         = sink_valid;
     assign src_startofpacket = sink_startofpacket;
     assign src_endofpacket   = sink_endofpacket;
-    wire [7-1 : 0] default_src_channel;
+    wire [8-1 : 0] default_rd_channel;
+    wire [8-1 : 0] default_wr_channel;
 
 
 
@@ -166,20 +167,22 @@ module reloj_soc_mm_interconnect_0_router_004
     // -------------------------------------------------------
     // Write and read transaction signals
     // -------------------------------------------------------
+    wire write_transaction;
+    assign write_transaction = sink_data[PKT_TRANS_WRITE];
     wire read_transaction;
     assign read_transaction  = sink_data[PKT_TRANS_READ];
 
 
     reloj_soc_mm_interconnect_0_router_004_default_decode the_default_decode(
       .default_destination_id (),
-      .default_wr_channel   (),
-      .default_rd_channel   (),
-      .default_src_channel  (default_src_channel)
+      .default_wr_channel   (default_wr_channel),
+      .default_rd_channel   (default_rd_channel),
+      .default_src_channel  ()
     );
 
     always @* begin
         src_data    = sink_data;
-        src_channel = default_src_channel;
+        src_channel = write_transaction ? default_wr_channel : default_rd_channel;
 
         // --------------------------------------------------
         // DestinationID Decoder
@@ -189,12 +192,16 @@ module reloj_soc_mm_interconnect_0_router_004
 
 
 
-        if (destid == 0 ) begin
-            src_channel = 7'b01;
+        if (destid == 0  && write_transaction) begin
+            src_channel = 8'b001;
         end
 
-        if (destid == 1  && read_transaction) begin
-            src_channel = 7'b10;
+        if (destid == 0  && read_transaction) begin
+            src_channel = 8'b010;
+        end
+
+        if (destid == 1 ) begin
+            src_channel = 8'b100;
         end
 
 

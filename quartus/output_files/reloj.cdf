@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("D:/QuartusProject/Examples/output_files/") File("reloj.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("C:/Users/f_cec/Documents/GitHub/MP3-Proyecto/quartus/output_files/") File("reloj.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

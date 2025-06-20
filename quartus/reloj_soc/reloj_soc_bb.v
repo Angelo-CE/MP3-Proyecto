@@ -8,23 +8,8 @@ module reloj_soc (
 	audio_pll_clk,
 	buttons_export,
 	clk_clk,
-	hps_f2h_cold_reset_req_reset_n,
-	hps_f2h_debug_reset_req_reset_n,
-	hps_f2h_stm_hw_events_stm_hwevents,
-	hps_f2h_warm_reset_req_reset_n,
-	hps_h2f_reset_reset_n,
-	hps_io_hps_io_sdio_inst_CMD,
-	hps_io_hps_io_sdio_inst_PWREN,
-	hps_io_hps_io_sdio_inst_D0,
-	hps_io_hps_io_sdio_inst_D1,
-	hps_io_hps_io_sdio_inst_CLK,
-	hps_io_hps_io_sdio_inst_D2,
-	hps_io_hps_io_sdio_inst_D3,
-	hps_io_hps_io_uart0_inst_RX,
-	hps_io_hps_io_uart0_inst_TX,
-	hps_io_hps_io_uart0_inst_CTS,
-	hps_io_hps_io_uart0_inst_RTS,
 	leds_export,
+	resetxd_reset_n,
 	memory_mem_a,
 	memory_mem_ba,
 	memory_mem_ck,
@@ -40,8 +25,7 @@ module reloj_soc (
 	memory_mem_dqs_n,
 	memory_mem_odt,
 	memory_mem_dm,
-	memory_oct_rzqin,
-	resetxd_reset_n);	
+	memory_oct_rzqin);	
 
 	input		audio_BCLK;
 	output		audio_DACDAT;
@@ -51,23 +35,8 @@ module reloj_soc (
 	output		audio_pll_clk;
 	input	[7:0]	buttons_export;
 	input		clk_clk;
-	input		hps_f2h_cold_reset_req_reset_n;
-	input		hps_f2h_debug_reset_req_reset_n;
-	input	[27:0]	hps_f2h_stm_hw_events_stm_hwevents;
-	input		hps_f2h_warm_reset_req_reset_n;
-	output		hps_h2f_reset_reset_n;
-	inout		hps_io_hps_io_sdio_inst_CMD;
-	output		hps_io_hps_io_sdio_inst_PWREN;
-	inout		hps_io_hps_io_sdio_inst_D0;
-	inout		hps_io_hps_io_sdio_inst_D1;
-	output		hps_io_hps_io_sdio_inst_CLK;
-	inout		hps_io_hps_io_sdio_inst_D2;
-	inout		hps_io_hps_io_sdio_inst_D3;
-	input		hps_io_hps_io_uart0_inst_RX;
-	output		hps_io_hps_io_uart0_inst_TX;
-	input		hps_io_hps_io_uart0_inst_CTS;
-	output		hps_io_hps_io_uart0_inst_RTS;
 	output	[31:0]	leds_export;
+	input		resetxd_reset_n;
 	output	[12:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
 	output		memory_mem_ck;
@@ -84,5 +53,4 @@ module reloj_soc (
 	output		memory_mem_odt;
 	output		memory_mem_dm;
 	input		memory_oct_rzqin;
-	input		resetxd_reset_n;
 endmodule
